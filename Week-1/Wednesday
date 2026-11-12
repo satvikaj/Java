@@ -1,0 +1,54 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter A:");
+        int a=sc.nextInt();
+        System.out.println("Enter B:");
+        
+        int b=sc.nextInt();
+        System.out.println("Addition:"+(a+b));
+        System.out.println("Substraction:"+(a-b));
+        System.out.println("Multiplication:"+(a*b));
+        System.out.println("Divison:"+(a/b));
+        System.out.println("Modulus:"+(a%b));
+        
+        System.out.println("Enter Maths marks:");
+        float m=sc.nextFloat();
+        System.out.println("Enter Ai marks:");
+        float ai=sc.nextFloat();
+        System.out.println("Enter english marks:");
+        float eng=sc.nextFloat();
+        float total=(m+ai+eng);
+        float percentage=(total/300)*100;
+        System.out.println("Percentage:"+percentage);
+        
+        System.out.print("Enter amount in Rupees: ");
+        double rupees = sc.nextDouble();
+        double paise = rupees * 100;
+        System.out.println("Amount in Paise: " + paise);
+
+        System.out.println("Enter lenght :");
+        double l=sc.nextDouble();
+        System.out.println("Enter breadth: ");
+        double br=sc.nextDouble();
+        System.out.println("Area of Rectangle: "+(l*br));
+        System.out.println("Perimeter of Rectangle: "+(2*(l+br)));
+
+        System.out.println("Enter radius:");
+        float r=sc.nextFloat();
+        System.out.println("Area of circle: "+(3.14*r*r));
+
+        System.out.println("Enter Age:");
+        int age=sc.nextInt();
+        System.out.println("Age after 5 years: "+(age+5));
+
+        System.out.println("Enter Name:");
+        String name=sc.next();
+        System.out.println("welcome "+name);
+        
+
+        
+    }
+}
