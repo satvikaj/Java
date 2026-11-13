@@ -1,0 +1,178 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        //Check whether a number is positive, negative or zero.
+        System.out.println("Enter a number: ");
+        int a=sc.nextInt();
+        if(a>0){
+            System.out.println("Positive");
+        }else if(a<0){
+            System.out.println("negative");
+        }else{
+            System.out.println("Zero");
+        }
+        //even or odd
+        if((a%2)==0){
+        System.out.println(a+" is even number");
+        }else{
+        System.out.println(a+" is odd number");
+        }
+        //Find the largest of two numbers.
+        System.out.println("Enter another number: ");
+        int b=sc.nextInt();
+        if(a>b){
+        System.out.println(a+" is the largest number");
+        }else if(b>a){
+            System.out.println(b+" is the largest number");
+        }else{
+            System.out.println("Both numbers are equal");
+        }
+        //Find the largest of three numbers.
+        System.out.println("Enter another number: ");
+        int c=sc.nextInt();
+        if(a>=b&&a>=c){
+            System.out.println(a+"is largest number: ");
+        }else if(b>=c&&b>=a){
+            System.out.println(b+"is largest number: ");
+        }else{
+            System.out.println(c+"is largest number: ");
+        }
+        //Check whether a person is eligible to vote.
+        //method 1 
+        System.out.println("Enter age: ");
+        int age=sc.nextInt();
+        if(age>=18){
+            System.out.println("Eligble to vote");
+        }else{
+            System.out.println("Not Eligble to vote");
+        }
+        //method 2 using ternary operator
+        String result=(age>=18)? "Eligible to vote": "Not Eligible to vote";
+        System.out.println(result);
+        //Leap year or not
+        System.out.println("Enter year:");
+        int year = sc.nextInt();
+        if(year % 400 == 0) {
+        System.out.println("Leap Year");
+        } else if(year % 100 == 0) {
+            System.out.println("Not a Leap Year");
+        } else if(year % 4 == 0) {
+            System.out.println("Leap Year");
+        } else {
+            System.out.println("Not a Leap Year");
+        }
+        //method 2
+        String leap=(year%400==0||(year%4==0&&year%100!=0))? "Leap year":"Not leap year";
+        System.out.println(leap);
+        //Grade cal
+        System.out.println("Enter marks:");
+        int m = sc.nextInt();
+        String grade=(m>=90)? "A":(m>=75)? "B":(m>=50)? "C":"fail";
+        System.out.println(grade);
+        //Check whether a character is a vowel or consonant.
+        System.out.println("Enter a character");
+        char ch=sc.next().charAt(0);
+        if(!Character.isLetter(ch)) {
+            System.out.println("Not an alphabet");
+        } 
+        else if(ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U' ||
+        ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u') {
+            System.out.println(ch + " is a vowel");
+        } 
+        else {
+            System.out.println(ch + " is a consonant");
+        }
+        //Calculator using switch
+         System.out.println("Choose an operator (+, -, *, /, %):");
+         char op = sc.next().charAt(0);
+
+        switch(op) {
+            case '+':
+                System.out.println("Addition: " + (a+b));
+                break;
+
+            case '-':
+                System.out.println("Subtraction: " + (a-b));
+                break;
+
+            case '*':
+                System.out.println("Multiplication: " + (a*b));
+                break;
+
+            case '/':
+                if(b != 0) {
+                    System.out.println("Division: " + (a/b));
+                } else {
+                    System.out.println("Cannot divide by zero");
+                }
+                break;
+
+            case '%':
+                if(b != 0) {
+                    System.out.println("Modulus: " + (a%b));
+                } else {
+                    System.out.println("Cannot divide by zero");
+                }
+                break;
+
+            default:
+                System.out.println("Invalid operator");
+        }
+        //divisible by 5 and 11
+        System.out.println("Enter a number:");
+        int num = sc.nextInt();
+
+        if(num % 5 == 0 && num % 11 == 0) {
+            System.out.println("Divisible by both 5 and 11");
+        } else {
+            System.out.println("Not divisible by both 5 and 11");
+        }
+        //student management system
+        System.out.println("Enter student name:");
+        String name = sc.next();
+
+        System.out.println("Enter M1 marks:");
+        int m1 = sc.nextInt();
+
+        System.out.println("Enter M2 marks:");
+        int m2 = sc.nextInt();
+
+        System.out.println("Enter M3 marks:");
+        int m3 = sc.nextInt();
+
+        System.out.println("Enter M4 marks:");
+        int m4 = sc.nextInt();
+
+        System.out.println("Enter M5 marks:");
+        int m5 = sc.nextInt();
+
+        int total = m1 + m2 + m3 + m4 + m5;
+        double percentage = total / 5.0;
+        System.out.println("\nStudent Name: " + name);
+        System.out.println("Total Marks: " + total + "/500");
+        System.out.println("Percentage: " + percentage + "%");
+        if(m1 >= 35 && m2 >= 35 && m3 >= 35 && m4 >= 35 && m5 >= 35) {
+
+            System.out.println("\nResult: Pass");
+
+            if(percentage >= 90) {
+                System.out.println("Grade: A+");
+            } else if(percentage >= 80) {
+                System.out.println("Grade: A");
+            } else if(percentage >= 70) {
+                System.out.println("Grade: B");
+            } else if(percentage >= 60) {
+                System.out.println("Grade: C");
+            } else if(percentage >= 50) {
+                System.out.println("Grade: D");
+            } else {
+                System.out.println("Grade: E");
+            }
+
+        } else {
+            System.out.println("\nResult: Fail");
+            System.out.println("Grade: F");
+        }
+    }
+}
