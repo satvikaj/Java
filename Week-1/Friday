@@ -1,0 +1,134 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        // 1. Print numbers from 1 to 100
+        System.out.println("Numbers from 1 to 100:");
+        for(int i=1; i<=100; i++) {
+            System.out.println(i);
+        }
+
+        // 2. Print even numbers from 1 to 100
+        System.out.println("Even numbers from 1 to 100:");
+        for(int i=1; i<=100; i++) {
+            if(i%2==0) {
+                System.out.println(i);
+            }
+        }
+
+        // 3. Print odd numbers from 1 to 100
+        System.out.println("Odd numbers from 1 to 100:");
+        for(int i=1; i<=100; i++) {
+            if(i%2!=0) {
+                System.out.println(i);
+            }
+        }
+
+        // 4. Print multiplication table of a number
+        System.out.println("Enter a number:");
+        int n = sc.nextInt();
+
+        for(int i = 1; i <= 10; i++) {
+            System.out.println(n + " x " + i + " = " + (n * i));
+        }
+
+        // 5. Sum of first N natural numbers
+        System.out.println("Enter another number:");
+        int m = sc.nextInt();
+        System.out.println("Sum of first "+m+" natural numbers is "+((m*(m+1)))/2);
+
+        // 6. Factorial of a number
+        System.out.println("Enter a number:");
+        int num = sc.nextInt();
+
+        long fact = 1;
+
+        for(int i = 1; i <= num; i++) {
+            fact = fact * i;
+        }
+
+        System.out.println("Factorial of " + num + " is " + fact);
+
+        // 7. Reverse a number
+        System.out.println("Enter a number:");
+        int a = sc.nextInt();
+        int c=a;
+
+        int rev = 0;
+        while(a>0){
+            int d=a%10;
+            rev=rev*10+d;
+            a=a/10;
+        }
+        System.out.println("Reverse of "+c+" is :"+rev);
+
+        // 8. Count digits in a number
+        System.out.println("Enter a number:");
+        int b = sc.nextInt();
+        int r=b;
+        int count = 0;
+
+        if(b == 0) {
+            count = 1;
+        } else {
+            while(b > 0) {
+                b = b / 10;
+                count++;
+            }
+        }
+        System.out.println("no. of digits in "+r+" are: "+count);
+
+        // 9. Sum of digits in a number
+        System.out.println("Enter a number:");
+        int x = sc.nextInt();
+        int y=x;
+        int sum = 0;
+        while(x>0){
+            int o=x%10;
+            sum=sum+o;
+            x=x/10;
+        }
+        System.out.println("Sum of digits in "+y+" is :"+sum);
+
+        // 10. Check whether a number is Palindrome or not
+        if(c == rev) {
+            System.out.println(c + " is a Palindrome");
+        } else {
+            System.out.println(c + " is not a Palindrome");
+        }
+
+        // 11. Check whether a number is Prime or not
+        System.out.println("Enter a number:");
+        int p = sc.nextInt();
+
+        int counts = 0;
+
+        for(int i = 1; i <= p; i++) {
+            if(p % i == 0) {
+                counts++;
+            }
+        }
+
+        if(counts == 2) {
+            System.out.println(p + " is a Prime Number");
+        } else {
+            System.out.println(p + " is not a Prime Number");
+        }
+
+        // 12. Print Fibonacci series
+        System.out.println("Enter number of terms:");
+        int l = sc.nextInt();
+
+        int q = 0, s = 1;
+
+        for(int i = 1; i <= l; i++) {
+            System.out.print(q + " ");
+
+            int next = q + s;
+            q = s;
+            s = next;
+        }
+    }
+}
