@@ -1,0 +1,201 @@
+
+import java.util.*;
+
+class Main {
+
+    // Student details
+    static int id;
+    static String name;
+    static int marks;
+    static boolean studentAdded = false;
+    static Scanner sc = new Scanner(System.in);
+    
+    
+    static int add(int a,int b){
+        return a+b;
+    }
+
+    static int sq(int a){
+        return a*a;
+    }
+
+    static String checkevenodd(int n){
+        if(n%2==0){
+            return "even";
+        }else{
+            return "odd";
+        }
+    }
+
+    static String checkprime(int n) {
+
+        if (n <= 1) {
+            return "not Prime";
+        }
+
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return "not Prime";
+            }
+        }
+
+        return "Prime";
+    }
+
+    static int fact(int n){
+        if(n==0){
+            return 1;
+        }
+        return n*fact(n-1);
+    }
+
+    static int reverse(int n){
+        int r=0;
+        while(n!=0){
+            int d=n%10;
+            r=r*10+d;
+            n=n/10;
+        }
+        return r;
+    }
+
+    static String palindrome(int n) {
+        if(n == reverse(n)) {
+            return "Palindrome";
+        } else {
+            return "Not Palindrome";
+        }
+    }
+
+    static int large(int a, int b, int c){
+        if(a>=b && a>=c){
+            return a;
+        }else if(b>=a && b>=c){
+            return b;
+        }else{
+            return c;
+        }
+    }
+
+    // Method to add student
+    static void addStudent(){
+
+        System.out.println("Enter Student ID:");
+        id = sc.nextInt();
+
+        System.out.println("Enter Student Name:");
+        name = sc.next();
+
+        System.out.println("Enter Student Marks:");
+        marks = sc.nextInt();
+
+        studentAdded = true;
+
+        System.out.println("Student added successfully!");
+    }
+
+    // Method to display student
+    static void displayStudent(){
+
+        if(studentAdded){
+            System.out.println("Student ID: "+id);
+            System.out.println("Student Name: "+name);
+            System.out.println("Student Marks: "+marks);
+        }else{
+            System.out.println("No student record found!");
+        }
+    }
+
+    // Method to search student
+    static void searchStudent(){
+
+        if(studentAdded){
+
+            System.out.println("Enter Student ID to search:");
+            int searchId = sc.nextInt();
+
+            if(searchId == id){
+                System.out.println("Student Found!");
+                System.out.println("Student ID: "+id);
+                System.out.println("Student Name: "+name);
+                System.out.println("Student Marks: "+marks);
+            }else{
+                System.out.println("Student Not Found!");
+            }
+
+        }else{
+            System.out.println("No student record found!");
+        }
+    }
+
+    public static void main(String[] args) {
+
+
+        System.out.println("Enter first number:");
+        int num1 = sc.nextInt();
+
+        System.out.println("Enter second number:");
+        int num2 = sc.nextInt();
+
+        int result=add(num1,num2);
+        int square=sq(num1);
+        String evenodd=checkevenodd(num1);
+        String prime = checkprime(num1);
+
+        System.out.println("Enter a number:");
+        int a = sc.nextInt();
+
+        int f=fact(a);
+        int rev=reverse(num1);
+        String pal = palindrome(num1);
+        int largest=large(num1,num2,a);
+
+        System.out.println("Addition of two numbers is "+result);
+        System.out.println("Square of first number is "+square);
+        System.out.println(num1+" is "+evenodd);
+        System.out.println(num1 + " is " + prime);
+        System.out.println("Factorial of number is "+f);
+        System.out.println("Reverse of number is "+rev);
+        System.out.println(num1 + " is " + pal);
+        System.out.println("Largest of three numbers is "+largest);
+
+        // Student Management System
+        int choice;
+
+        do{
+            System.out.println("\n===== STUDENT MANAGEMENT SYSTEM =====");
+            System.out.println("1. Add Student");
+            System.out.println("2. Display Student");
+            System.out.println("3. Search Student");
+            System.out.println("4. Exit");
+
+            System.out.println("Enter your choice:");
+            choice = sc.nextInt();
+
+            switch(choice){
+
+                case 1:
+                    addStudent();
+                    break;
+
+                case 2:
+                    displayStudent();
+                    break;
+
+                case 3:
+                    searchStudent();
+                    break;
+
+                case 4:
+                    System.out.println("Exiting Student Management System...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice!");
+            }
+
+        }while(choice != 4);
+
+        sc.close();
+    }
+}
