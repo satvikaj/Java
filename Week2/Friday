@@ -1,0 +1,127 @@
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a String:");
+        String name = sc.nextLine();
+
+        // Printing the original String
+        System.out.println("Original String: " + name);
+
+        // Finding the length
+        System.out.println("Length: " + name.length());
+
+        // Converting to uppercase
+        System.out.println("Uppercase: " + name.toUpperCase());
+
+        // Converting to lowercase
+        System.out.println("Lowercase: " + name.toLowerCase());
+
+        int vowels = 0;
+        int consonants = 0;
+
+        // Printing vowels
+        System.out.print("Vowels: ");
+
+        for(int i = 0; i < name.length(); i++) {
+            char ch = Character.toLowerCase(name.charAt(i));
+
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                System.out.print(ch + " ");
+                vowels++;
+            }
+        }
+
+        // Printing consonants
+        System.out.print("\nConsonants: ");
+
+        for(int i = 0; i < name.length(); i++) {
+            char ch = Character.toLowerCase(name.charAt(i));
+
+            if(ch >= 'a' && ch <= 'z') {
+                if(ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u') {
+                    System.out.print(ch + " ");
+                    consonants++;
+                }
+            }
+        }
+
+        System.out.println("\nVowel count: " + vowels);
+        System.out.println("Consonant count: " + consonants);
+
+        // Counting words
+        int words = 0;
+
+        for(int i = 0; i < name.length(); i++) {
+            if(name.charAt(i) != ' ' && (i == 0 || name.charAt(i-1) == ' ')) {
+                words++;
+            }
+        }
+
+        System.out.println("Word count: " + words);
+
+        // Reversing the String
+        System.out.print("Reversed String: ");
+
+        for(int i = name.length() - 1; i >= 0; i--) {
+            System.out.print(name.charAt(i));
+        }
+
+        System.out.println(" ");
+
+        // Checking palindrome
+        String reverse = "";
+
+        for(int i = name.length() - 1; i >= 0; i--) {
+            reverse = reverse + name.charAt(i);
+        }
+
+        System.out.println("Reversed String: " + reverse);
+
+        if(name.equalsIgnoreCase(reverse)) {
+            System.out.println("Palindrome");
+        }
+        else {
+            System.out.println("Not a Palindrome");
+        }
+
+        // Counting occurrences of a character
+        System.out.println("Enter character to search:");
+        char search = sc.next().charAt(0);
+
+        int count = 0;
+
+        for(int i = 0; i < name.length(); i++) {
+            if(name.charAt(i) == search) {
+                count++;
+            }
+        }
+
+        System.out.println("Occurrences: " + count);
+
+        // Removing spaces from the beginning and end
+        String result = name.trim();
+        System.out.println(result);
+
+        // Removing all spaces
+        String remove = name.replace(" ", "");
+        System.out.println(remove);
+
+        // Comparing two Strings
+        sc.nextLine(); // Consume the leftover newline
+
+        System.out.println("Enter another String:");
+        String name2 = sc.nextLine();
+
+        if(name.equals(name2)) {
+            System.out.println("Both Strings are equal");
+        }
+        else {
+            System.out.println("Both Strings are not equal");
+        }
+    }
+}
