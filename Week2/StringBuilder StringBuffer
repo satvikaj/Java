@@ -1,0 +1,77 @@
+class Main {
+    public static void main(String[] args) {
+
+        StringBuilder sb = new StringBuilder("Hello");
+
+        // Append text
+        sb.append(" Java");
+        System.out.println("After append: " + sb);
+
+        // Insert a word at a particular position
+        sb.insert(6, "World ");
+        System.out.println("After insert: " + sb);
+
+        // Delete characters
+        sb.delete(6, 12);
+        System.out.println("After delete: " + sb);
+
+        // Reverse a string
+        sb.reverse();
+        System.out.println("After reverse: " + sb);
+
+        // Replace a character at a particular index
+        sb.setCharAt(1, 'a');
+        System.out.println("After setCharAt: " + sb);
+
+        // Replace characters between two indexes
+        sb.replace(6, 10, "Program");
+        System.out.println("After replace: " + sb);
+    }
+}
+
+
+class Main {
+    public static void main(String[] args) {
+
+        // Using String
+        String str = "Hello";
+
+        System.out.println("String:");
+
+        str.concat(" Java");
+        System.out.println("After concat: " + str);
+
+        str = str.concat(" Java");
+        System.out.println("After assigning: " + str);
+
+
+        // Using StringBuilder
+        StringBuilder sb = new StringBuilder("Hello");
+
+        System.out.println("\nStringBuilder:");
+
+        sb.append(" Java");
+        System.out.println("After append: " + sb);
+    }
+}
+
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a sentence:");
+        String str = sc.nextLine();
+
+        StringBuilder sb = new StringBuilder(str);
+
+        for(int i = sb.length() - 1; i >= 0; i--) {
+            System.out.print(sb.charAt(i));
+        }
+
+        sc.close();
+    }
+}
